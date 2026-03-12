@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Resume - Sumer Lodhi</title>
+  <style>
+    body{font-family:Georgia,serif;margin:40px;background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);min-height:100vh}
+    .page{background:#fffdf7;max-width:750px;margin:0 auto;padding:40px;border-radius:8px;box-shadow:0 10px 40px rgba(0,0,0,0.4)}
+    h1,h2,p{color:#fff} h3{color:#c9a84c;border-bottom:1px solid #ccc;padding-bottom:4px}
+    table{border-collapse:collapse} th{background:#0f3460;color:#fff} td,th{padding:8px 16px;color:#fff} td{background:#16213e}
+    hr{border:1px solid #c9a84c}
+    .page{background:#1a1a2e}
+    .profile{width:110px;height:110px;border-radius:50%;border:3px solid #c9a84c;object-fit:cover}
+    .avatar{width:110px;height:110px;border-radius:50%;border:3px solid #c9a84c;background:#0f3460;display:inline-flex;align-items:center;justify-content:center;font-size:36px;color:#c9a84c}
+  </style>
+</head>
+<body>
+<div class="page">
+
+<center>
+  <h2>RESUME</h2>
+  <!-- Replace avatar div below with: <img src=""C:\Users\ganes\Downloads\WD\Sumer.jpeg"" class="profile"> -->
+  <div class="avatar">SL</div>
+  <h1>Sumer G. Lodhi</h1>
+  <p>USN: CM25115 &nbsp;|&nbsp; sumerl.ml25@sbjit.edu.in &nbsp;|&nbsp; 9279083335</p>
+</center>
+
+<hr>
+
+<h3>Educational Details</h3>
+<p>University: SB Jain Institute of Technology</p>
+<p>Department: CSE - Artificial Intelligence & Machine Learning</p>
+
+<br>
+
+<h3>Higher Education</h3>
+<table border="1" cellpadding="8" cellspacing="0">
+  <tr>
+    <th>Level</th><th>School / Board</th><th>Year</th><th>Percentage</th>
+  </tr>
+  <tr>
+    <td>12th / HSC</td><td>C.D.S.</td><td>2025</td><td>90%</td>
+  </tr>
+  <tr>
+    <td>10th / SSC</td><td>C.D.S.</td><td>2023</td><td>92%</td>
+  </tr>
+</table>
+
+<br>
+
+<h3>Technical Skills</h3>
+<p>HTML, CSS, JavaScript, C++</p>
+
+<br>
+
+<h3>Personal Details</h3>
+<p>Full Name: Sumer G. Lodhi</p>
+<p>Personal Email: sumerlodhi@gmail.com</p>
+<p>Mobile: 9279083335</p>
+
+<hr>
+<center><p>--- End of Resume ---</p></center>
+
+</div>
+</body>
+</html>
