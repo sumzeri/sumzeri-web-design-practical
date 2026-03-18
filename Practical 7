@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tribute Page</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(135deg, #1d2b64, #f8cdda);
+    color: #333;
+}
+nav {
+    background: rgba(0,0,0,0.7);
+    padding: 12px;
+    text-align: center;
+}
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a:hover { color: #f8cdda; }
+
+.container {
+    width: 80%;
+    margin: 40px auto;
+    background: rgba(255,255,255,0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+h1, h2 {
+    text-align: center;
+}
+img {
+    display: block;
+    margin: 15px auto;
+    width: 200px;
+    border-radius: 50%;
+    border: 3px solid #1d2b64;
+}
+p {
+    text-align: justify;
+    line-height: 1.5;
+}
+footer {
+    text-align: center;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 8px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Biography</a>
+    <a href="#">Achievements</a>
+</nav>
+
+<div class="container">
+    <h1>Dr. A.P.J. Abdul Kalam</h1>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/A._P._J._Abdul_Kalam.jpg">
+
+    <h2>About</h2>
+    <p>
+        Dr. A.P.J. Abdul Kalam, known as the Missile Man of India, was a great scientist
+        and the 11th President of India. He inspired millions with his humble nature,
+        vision, and dedication to the nation.
+    </p>
+
+    <h2>Achievements</h2>
+    <p>
+        He played a major role in India's missile and space programs, contributed to ISRO
+        and DRDO, and received the Bharat Ratna. His book "Wings of Fire" motivates youth
+        to dream big and achieve success.
+    </p>
+</div>
+
+<footer>
+    Tribute Page | Made for College Practical
+</footer>
+
+</body>
+</html>
