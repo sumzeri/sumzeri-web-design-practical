@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+        }
+        form {
+            background: white;
+            width: 320px;
+            margin: 50px auto;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        fieldset {
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+        legend {
+            font-weight: bold;
+        }
+        input, select {
+            width: 95%;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            width: auto;
+        }
+        input[type="submit"], input[type="reset"] {
+            width: 48%;
+            background: #4facfe;
+            color: white;
+            border: none;
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+<form>
+    <h3 align="center">Registration</h3>
+
+    <fieldset>
+        <legend>Personal</legend>
+        Name: <input type="text"><br>
+        Email: <input type="email"><br>
+        Phone: <input type="tel"><br>
+        Gender:
+        <input type="radio" name="g">Male
+        <input type="radio" name="g">Female
+    </fieldset>
+
+    <fieldset>
+        <legend>Seminar</legend>
+        Topic:
+        <select>
+            <option>Web Dev</option>
+            <option>AI</option>
+            <option>Cyber Security</option>
+        </select>
+        Skills:
+        <input type="checkbox">HTML
+        <input type="checkbox">CSS
+        <input type="checkbox">JS
+    </fieldset>
+
+    <fieldset>
+        <legend>Scholarship</legend>
+        Apply?
+        <input type="radio" name="s">Yes
+        <input type="radio" name="s">No
+    </fieldset>
+
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+
+</form>
+
+</body>
+</html>
