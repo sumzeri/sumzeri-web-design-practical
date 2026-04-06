@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image Gallery</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: sans-serif; background: #f5f5f3; color: #1a1a1a; padding: 2rem; }
+    h2 { font-size: 24px; font-weight: 500; margin-bottom: .25rem; }
+    p  { font-size: 14px; color: #888; margin-bottom: 1rem; }
+
+    .tag { display: inline-block; font-size: 12px; padding: 4px 12px; border-radius: 999px;
+           margin-right: 6px; margin-bottom: 14px; border: 1px solid #ddd; color: #666;
+           cursor: pointer; transition: background 0.2s, color 0.2s; background: #fff; }
+    .tag:hover, .tag.active { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
+
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+               gap: 14px; }
+
+    .card { border-radius: 12px; overflow: hidden; position: relative; cursor: pointer;
+            border: 1px solid #e0e0e0; aspect-ratio: 4/3; background: #ddd; }
+    .card img { width: 100%; height: 100%; object-fit: cover; display: block;
+                transition: transform 0.45s cubic-bezier(.25,.8,.25,1), filter 0.45s;
+                filter: brightness(0.95); }
+    .card:hover img { transform: scale(1.08); filter: brightness(0.55); }
+
+    .overlay { position: absolute; inset: 0; display: flex; flex-direction: column;
+               justify-content: flex-end; padding: 1rem; opacity: 0;
+               transition: opacity 0.35s ease;
+               background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 60%); }
+    .card:hover .overlay { opacity: 1; }
+    .overlay span { color: #fff; font-size: 14px; font-weight: 500; }
+    .overlay small { color: rgba(255,255,255,0.7); font-size: 12px; margin-top: 3px; }
+  </style>
+</head>
+<body>
+
+  <h2>Explore Gallery</h2>
+  <p>Hover over any photo to discover more.</p>
+
+  <div>
+    <span class="tag active" onclick="filter('all', this)">All</span>
+    <span class="tag" onclick="filter('nature', this)">Nature</span>
+    <span class="tag" onclick="filter('city', this)">City</span>
+    <span class="tag" onclick="filter('ocean', this)">Ocean</span>
+  </div>
+
+  <div class="gallery" id="gallery"></div>
+
+  <script>
+    const photos = [
+      { src:"https://picsum.photos/seed/forest1/600/450", title:"Ancient Forest", loc:"Pacific Northwest", cat:"nature" },
+      { src:"https://picsum.photos/seed/city99/600/450",  title:"City at Dusk",   loc:"New York",         cat:"city"   },
+      { src:"https://picsum.photos/seed/ocean22/600/450", title:"Open Waters",    loc:"Mediterranean",    cat:"ocean"  },
+      { src:"https://picsum.photos/seed/mount5/600/450",  title:"Mountain Mist",  loc:"Swiss Alps",       cat:"nature" },
+      { src:"https://picsum.photos/seed/street3/600/450", title:"Night Streets",  loc:"Tokyo",            cat:"city"   },
+      { src:"https://picsum.photos/seed/wave77/600/450",  title:"Crashing Waves", loc:"Hawaii",           cat:"ocean"  },
+      { src:"https://picsum.photos/seed/wildfl/600/450",  title:"Wild Meadow",    loc:"Tuscany",          cat:"nature" },
+      { src:"https://picsum.photos/seed/bridge9/600/450", title:"Iron Bridge",    loc:"Prague",           cat:"city"   },
+      { src:"https://picsum.photos/seed/reef12/600/450",  title:"Coral Reef",     loc:"Great Barrier",    cat:"ocean"  },
+    ];
+
+    const g = document.getElementById('gallery');
+
+    function render(items) {
+      g.innerHTML = items.map(p => `
+        <div class="card">
+          <img src="${p.src}" loading="lazy" alt="${p.title}">
+          <div class="overlay">
+            <span>${p.title}</span>
+            <small>${p.loc}</small>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filter(cat, el) {
+      document.querySelectorAll('.tag').forEach(t => t.classList.remove('active'));
+      el.classList.add('active');
+      render(cat === 'all' ? photos : photos.filter(p => p.cat === cat));
+    }
+
+    render(photos);
+  </script>
+</body>
+</html>
