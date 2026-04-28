@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML5 Demo</title>
+</head>
+<body>
+<h3>Drag & Drop</h3>
+<div id="box" draggable="true" ondragstart="drag(event)" 
+style="width:100px;height:100px;background:lightblue;">Drag</div>
+<div id="drop" ondrop="drop(event)" ondragover="allowDrop(event)" 
+style="width:150px;height:150px;border:2px dashed black;"></div>
+<h3>Geolocation</h3>
+<button onclick="getLocation()">Get Location</button>
+<p id="loc"></p>
+<h3>Web Storage</h3>
+<input id="txt">
+<button onclick="save()">Save</button>
+<button onclick="load()">Load</button>
+<p id="out"></p>
+<script>
+function allowDrop(e){e.preventDefault();}
+function drag(e){e.dataTransfer.setData("text", e.target.id);}
+function drop(e){
+ e.preventDefault();
+ let data=e.dataTransfer.getData("text");
+ e.target.appendChild(document.getElementById(data));
+}
+function getLocation(){
+ if(navigator.geolocation){
+  navigator.geolocation.getCurrentPosition(
+   p=>document.getElementById("loc").innerHTML=
+   p.coords.latitude+", "+p.coords.longitude,
+   ()=>document.getElementById("loc").innerHTML="Permission denied"
+  );
+ } else {
+  document.getElementById("loc").innerHTML="Not supported";
+ }
+}
+function save(){
+ try{
+  localStorage.setItem("data",document.getElementById("txt").value);
+ }catch(e){}
+}
+function load(){
+ try{
+  document.getElementById("out").innerHTML=localStorage.getItem("data");
+ }catch(e){}
+}
+</script>
+</body>
+</html>
